@@ -8,9 +8,10 @@
 int main(int argc, char *argv[])
 {
 	pid_t pid;
-	int i;
+	int i=0;
+	int j=0;
 
-	for (i = 0 ; i < 10 ; i++) {
+	for (i = 0 ; i < 10 ;i++) {
 		pid = fork();
 		if (pid == -1) {
 			perror("fork error");
@@ -19,12 +20,12 @@ int main(int argc, char *argv[])
 		else if (pid == 0) {
 			// child
 			i=i+2;
-			printf("child pid=%d\n",pid);
+			//printf("child pid=%d\n",pid);
 			printf("child process with pid %d (i: %d) \n", getpid(), i);
 			exit (0);
 		} else {
 			// parent
-			printf("parent pid=%d\n",pid);
+			//printf("parent pid=%d\n",pid);
 			i++;
 			printf("parent process with pid %d (i: %d)\n", getpid(), i);
 			wait(0);

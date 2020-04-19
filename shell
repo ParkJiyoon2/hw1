@@ -1,0 +1,4 @@
+echo "enter filename";
+read path;
+execve(const char *path, char *const argv[],NULL);
+
